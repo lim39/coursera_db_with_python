@@ -8,9 +8,10 @@ cur.execute('DROP TABLE IF EXISTS Counts')
 cur.execute('''
 CREATE TABLE Counts (email TEXT, count INTEGER)''')
 
+fpath = 'C:\\Users\\USER\\Documents\\coursera_db_with_python\\Using_a_DB_WITH_Python\\code3\\'
 fname = input('Enter file name: ')
 if (len(fname) < 1): fname = 'mbox-short.txt'
-fh = open(fname)
+fh = open(fpath+fname)
 for line in fh:
     if not line.startswith('From: '): continue
     pieces = line.split()
